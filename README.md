@@ -10,8 +10,8 @@ The planets orbits are not to scale either, however, some code could be commente
 ## How was this p5.js sketch made? 
 This is really a very simple program that was created on the second day after I first started programming in p5.js (although I had some previous JavaScript experience). The key element to make this program work is to program the circular orbits. The parametric equation of a circle is crucial to this program (this page explains it well: https://www.mathopenref.com/coordparamcircle.html). The equation describes all the points on a circle given the circle's *radius, r* and the chosen *radian* of the circle, as well as the *origin* (x, y)of the circle. A radian is simply an alternative to using degrees to describe areas of the the circle. The parametric equation of a circle takes radians as input, but degrees can easially be converted to radians using this JavaScript function: 
 
-'''javascript
+```javascript
 function deg_to_rad(degrees) {
 	return (degrees - 90 )* PI / 180;
 }
-'''
+```
