@@ -30,14 +30,14 @@ let uranus_d = 2871 * scale_d;
 let neptune_d = 4530 * scale_d;
 */
 // 2. For illustrative purposes - get all planets in the frame without making some planets super small
-let mercury_d = 20;
-let venus_d = 60;
-let earth_d = 80;
-let mars_d = 120;
-let jupiter_d = 210;
-let saturn_d = 350;
-let uranus_d = 400;
-let neptune_d = 440;
+let mercury_d = 40;
+let venus_d = 80;
+let earth_d = 100;
+let mars_d = 140;
+let jupiter_d = 230;
+let saturn_d = 380;
+let uranus_d = 460;
+let neptune_d = 520;
 
 // Orbit time 
 // The numbers are the planets year in earth days.
@@ -89,7 +89,7 @@ function draw() {
 
 	// The sun - not at all to scale 
 	fill(255, 153, 0);
-	ellipse(center_of_screen_x, center_of_screen_y, 20, 20);
+	ellipse(center_of_screen_x, center_of_screen_y, 50, 50);
 
 
 	// ---- Render planets ----
