@@ -29,12 +29,20 @@ function points_on_circle(cx, cy, r, a) {
 In this function cx and cy are the coordinates of the center of the solar system, r is the radius of an orbit and a is the degree on the circle at which the planet is in the current frame. When we have this key function the following function incorporates the previous function in order to render a planet using the **ellipse** function of the p5.js library: 
 ```javascript
 function planet(center_of_screen_x, center_of_screen_y, diameter, orbit_radius, starting_point, year) {
-
 	coordinates = points_on_circle(center_of_screen_x, center_of_screen_y, orbit_radius, year-starting_point);
 	ellipse(coordinates[0], coordinates[1], diameter, diameter);
 }
 ```
+The final important part of this program is how we assign the degrees of the planets to the function above, that is what we put in as the **year** argument. In order to do this I add *360*/*the days of the planets orbit in earth days* times a *scaling factor*. This makes the planets that have few days in a year move relatively many degrees in a frame, and planets that have longer orbits move fewer degrees in a frame. The current degree of the planets is stored in a dictionary called *is* (stems from the fact that the first program only had one planet and looped based on the current state of a loop which normally is denoted as *i*). At the start of the main loop *draw* a function checks if some of the planets have reach more than 360 degrees, and is reset to 0 using the following function that loops through each element of the dictionary that stores the degrees of each planet:
+```javascript
+for (var this_planet in is) {
+	if (is[this_planet] > 360) {
+		is[this_planet] = 0;
+	}
+}
 
+```
+That is pretty much it! To run this program I am using the node.js program called live-server. When installed using **npm** simply navigate into the folder of where the two files in this repository is located and run **live-server**. 
 
 
 
