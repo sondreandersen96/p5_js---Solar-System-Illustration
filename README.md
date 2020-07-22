@@ -1,6 +1,6 @@
 # p5.js Solar System Illustration
 *Solar System Illustration using p5.js*
-![Solar System](solarSystem.png | width=100)
+![Solar System](solarSystem.png =100x)
 
 
 
