@@ -15,3 +15,15 @@ function deg_to_rad(degrees) {
 	return (degrees - 90 )* PI / 180;
 }
 ```
+The parametric equation of a circle, that I have been rambling on about, looks like this:
+**x = r cos(t) **
+**y = r sin(t) **
+Where r is the radius, and t is the radian describing the point on the circle. This simple piece of math is incorporated into the program using the following code: 
+```javascript
+function points_on_circle(cx, cy, r, a) {
+	let x = cx + r * cos(deg_to_rad(a));
+	let y = cy + r * sin(deg_to_rad(a));
+	return [x, y];
+}
+```
+
