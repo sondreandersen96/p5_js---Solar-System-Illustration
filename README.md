@@ -1,5 +1,9 @@
 # p5.js Solar System Illustration
 *Solar System Illustration using p5.js*
+![Solar System](solarSystem.png)
+
+
+
 
 This repository uses the p5.js package in JavaScript to create an illustration of the plantes in our solar system. Note that this is not a simulation but rather an illustration. That means that the planets orbits are not based on orbital mechanics but rather circular motions rendered at speeds that replicate the avarege speed of the reel planets orbits but speed up a lot, i.e. the plantes' orbits are somewhat realistic relative to each other. 
 
