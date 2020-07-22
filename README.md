@@ -49,7 +49,7 @@ for (var this_planet in is) {
 }
 
 ```
-That is pretty much it! To run this program I am using the node.js program called live-server. When installed using **npm** simply navigate into the folder of where the two files in this repository is located and run **live-server**. 
+That is pretty much it! To run this program I am using the node.js program called live-server. When installed using **npm** simply navigate into the folder of where the two files in this repository is located and run **live-server** (at least in the terminal on MacOS). 
 
 
 
