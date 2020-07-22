@@ -16,8 +16,8 @@ function deg_to_rad(degrees) {
 }
 ```
 The parametric equation of a circle, that I have been rambling on about, looks like this:
-**x = r cos(t) **
-**y = r sin(t) **
+**x = r cos(t)**
+**y = r sin(t)**
 Where r is the radius, and t is the radian describing the point on the circle. This simple piece of math is incorporated into the program using the following code: 
 ```javascript
 function points_on_circle(cx, cy, r, a) {
@@ -26,4 +26,23 @@ function points_on_circle(cx, cy, r, a) {
 	return [x, y];
 }
 ```
+In this function cx and cy are the coordinates of the center of the solar system, r is the radius of an orbit and a is the degree on the circle at which the planet is in the current frame. When we have this key function the following function incorporates the previous function in order to render a planet using the **ellipse** function of the p5.js library: 
+```javascript
+function planet(center_of_screen_x, center_of_screen_y, diameter, orbit_radius, starting_point, year) {
+
+	coordinates = points_on_circle(center_of_screen_x, center_of_screen_y, orbit_radius, year-starting_point);
+	ellipse(coordinates[0], coordinates[1], diameter, diameter);
+}
+```
+
+
+
+
+
+
+
+
+
+
+
 
