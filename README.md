@@ -53,7 +53,7 @@ That is pretty much it! To run this program I am using the node.js program calle
 
 
 
-
+*Note: The planet function could probably be substituted with a planet class for "better" code.*
 
 
 
