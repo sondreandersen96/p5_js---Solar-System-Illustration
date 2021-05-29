@@ -1,8 +1,10 @@
-let size_of_screen_y = 720;
-let center_of_screen_y = size_of_screen_y/2;
-let size_of_screen_x = 1210;
-let center_of_screen_x = size_of_screen_x/2;
+let size_of_screen_y; // 720
+let center_of_screen_y; // size_of_screen_y/2;
+let size_of_screen_x; // 1210
+let center_of_screen_x;// size_of_screen_x/2;
 
+// Sliders
+let speedSlider;
 
 // Planet size
 let scale = 1200;
@@ -67,9 +69,22 @@ let is = {
 
 
 // Setup function 
-function setup() {
+function setup() {	
+	//createCanvas(size_of_screen_x, size_of_screen_y);
+	
+	size_of_screen_y = windowHeight;
+	center_of_screen_y = size_of_screen_y / 2;
+	size_of_screen_x = windowWidth;
+	center_of_screen_x = size_of_screen_x / 2;
+	
 	createCanvas(size_of_screen_x, size_of_screen_y);
+	
 
+	speedSlider = createSlider(0.001, 12, 2.5, 0.01);
+	speedSlider.position(10, 10);
+	speedSlider.style('width', '120px');
+
+	
 }
 
 
@@ -77,7 +92,8 @@ function setup() {
 function draw() {
 	background(49);
 	noStroke();
-
+	speedSliderUpdate();
+	
 	//----
 	// Reset degrees to zero when 360 is reached 
 	for (var this_planet in is) {
@@ -136,6 +152,13 @@ function draw() {
 	is['uranus'] = is['uranus'] + 360 / uranus_year;
 	is['neptune'] = is['neptune'] + 360 / neptune_year;
 
+
+	// Slider text description (added at the end so that the planets arent rendered over)
+	textSize(18);
+	fill(255, 255, 255);
+	text('Speed', 140, 18);
+
+
 }
 
 
@@ -162,6 +185,18 @@ function planet(center_of_screen_x, center_of_screen_y, diameter, orbit_radius, 
 	ellipse(coordinates[0], coordinates[1], diameter, diameter);
 }
 
+// Update planet speed based on slider
+function speedSliderUpdate() {
+	let speedValue = speedSlider.value();
 
+	mercury_year = 88 / speedValue;
+	venus_year = 225 / speedValue;
+	earth_year = 365 / speedValue;
+	mars_year = 687 / speedValue;
+	jupiter_year = 4333 / speedValue;
+	saturn_year = 10759 / speedValue;
+	uranus_year = 30687 / speedValue;
+	neptune_year = 60190 / speedValue; 
+}
 
 
